@@ -1,5 +1,5 @@
-const phrase = "Elle est ou la moulaga ? Grosse moula tah bogota !"
-const searchWord = "moula"
+const phrase = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+const searchWord = "mollit "
 
 /* Naive Method */
 const naive = function (needle, haystack){
@@ -44,7 +44,9 @@ const charTable = function (word){
     }
     return table
 }
-
+const nativeIndexOf = function (){
+    return phrase.indexOf(searchWord)
+}
 
 console.time('naive')
 console.log(naive(searchWord, phrase));
@@ -54,3 +56,7 @@ console.timeEnd('naive')
 console.time('moore')
 console.log(moore(searchWord, phrase));
 console.timeEnd('moore')
+
+console.time('nativeIndexOf')
+console.log(nativeIndexOf(searchWord, phrase));
+console.timeEnd('nativeIndexOf')
